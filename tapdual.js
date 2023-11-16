@@ -9,7 +9,8 @@ let gameOver = false;
 let red = 1;
 let blue = 1;
 
-playerOne.addEventListener('click', function () {
+playerOne.addEventListener('touchstart', function (event) {
+    event.preventDefault();
     if(!gameOver) {
         playerOne.style.height = `${(playerOne.clientHeight / playerOne.parentElement.clientHeight) * 100 + 1}%`;
         playerTwo.style.flex = `1`;
@@ -23,7 +24,8 @@ playerOne.addEventListener('click', function () {
     }
 });
 
-playerTwo.addEventListener('click', function () {
+playerTwo.addEventListener('touchstart', function (event) {
+    event.preventDefault();
     if(!gameOver) {
         playerTwo.style.height = `${(playerTwo.clientHeight / playerTwo.parentElement.clientHeight) * 100 + 1}%`;
         playerOne.style.flex = `1`;
